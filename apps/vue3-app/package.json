@@ -1,0 +1,61 @@
+{
+  "name": "vue3-app",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "vue-tsc --noEmit && vite build",
+    "dev": "vite",
+    "lint": "eslint \"**/*.{vue,ts,js}\"",
+    "preview": "vite preview",
+    "test": "cross-env NODE_ENV=development jest -i"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "ts",
+      "json",
+      "vue"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "preset": "ts-jest",
+    "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.ts$": "ts-jest",
+      "^.+\\.vue$": "@vue/vue3-jest"
+    },
+    "testEnvironmentOptions": {
+      "customExportConditions": ["node", "node-addons"]
+    }
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "vue": "^3.2.25",
+    "vue-i18n": "^9.1.10",
+    "vue-router": "^4.1.2",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@common/config": "workspace:*",
+    "@types/jest": "^28.1.5",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "@vue/test-utils": "^2.0.2",
+    "@vue/vue3-jest": "^28.0.1",
+    "@vuedx/typescript-plugin-vue": "^0.7.5",
+    "autoprefixer": "^10.4.7",
+    "babel-jest": "^28.1.3",
+    "cross-env": "^7.0.3",
+    "jest": "^28.1.3",
+    "jest-environment-jsdom": "^28.1.3",
+    "mockjs": "^1.1.0",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.6",
+    "ts-jest": "^28.0.5",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.9",
+    "vite-plugin-components": "^0.13.3",
+    "vite-plugin-mock": "^2.9.6",
+    "vue-tsc": "^0.34.7"
+  }
+}
