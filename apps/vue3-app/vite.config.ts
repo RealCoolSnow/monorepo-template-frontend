@@ -13,13 +13,13 @@ const resolve = (dir: string) => join(__dirname, dir)
 const config: UserConfig = {
   resolve: {
     alias: {
-      '~': resolve('src'),
+      '@': resolve('src'),
     },
   },
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: '@use "~/styles/element/index.scss" as *;',
+        additionalData: '@use "@/styles/element/index.scss" as *;',
       },
     },
   },

@@ -1,7 +1,7 @@
 const a = {
   moduleFileExtensions: ['js', 'ts', 'json', 'vue'],
   moduleNameMapper: {
-    '^~/(.*)$': '<rootDir>/src/$1'
+    '^@/(.*)$': '<rootDir>/src/$1'
   },
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
