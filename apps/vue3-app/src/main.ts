@@ -1,10 +1,11 @@
-import './styles/main.css'
+import '~/styles/index.scss'
+import 'element-plus/theme-chalk/src/message.scss'
 import { createApp } from 'vue'
 import App from './App.vue'
-import { createI18nWithLocale } from './locale'
 import store from './store'
 import { GetterTypes } from './store/types'
 import router from './router'
+import { createI18nWithLocale } from '~/locale'
 
 const i18n = createI18nWithLocale(store.getters[GetterTypes.APP.LANGUAGE])
 

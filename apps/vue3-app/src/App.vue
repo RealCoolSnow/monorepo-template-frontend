@@ -9,7 +9,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="px-4 py-10 text-center text-gray-700 dark:text-gray-500">
+  <el-config-provider namespace="ep">
     <router-view />
-  </div>
+  </el-config-provider>
 </template>

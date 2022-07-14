@@ -3,7 +3,9 @@ import Vue from '@vitejs/plugin-vue'
 import type { UserConfig } from 'vite'
 import ViteComponents from 'vite-plugin-components'
 import { viteMockServe } from 'vite-plugin-mock'
-
+// element-plus
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 const resolve = (dir: string) => join(__dirname, dir)
 
 // https://vitejs.dev/config/
@@ -11,7 +13,44 @@ const resolve = (dir: string) => join(__dirname, dir)
 const config: UserConfig = {
   resolve: {
     alias: {
-      '@': resolve('src'),
+      '~': resolve('src'),
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@use "~/styles/element/index.scss" as *;',
+      },
+    },
+  },
+  plugins: [
+    Vue(),
+    ViteComponents(),
+    viteMockServe({
+      mockPath: './src/mock',
+      watchFiles: true,
+      localEnabled: process.env.NODE_ENV === 'development',
+    }),
+    Components({
+      // allow auto load markdown components under `./src/components/`
+      extensions: ['vue', 'md'],
+      // allow auto import and register components used in markdown
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      resolvers: [
+        ElementPlusResolver({
+          importStyle: 'sass',
+        }),
+      ],
+      dts: 'src/components.d.ts',
+    }),
+  ],
+  server: {
+    proxy: {
+      '/api/': {
+        target: 'https://url.devserver/',
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/api/, ''),
+      },
     },
   },
   build: {
@@ -39,24 +78,6 @@ const config: UserConfig = {
         },
       },
     }, */
-  },
-  plugins: [
-    Vue(),
-    ViteComponents(),
-    viteMockServe({
-      mockPath: './src/mock',
-      watchFiles: true,
-      localEnabled: process.env.NODE_ENV === 'development',
-    }),
-  ],
-  server: {
-    proxy: {
-      '/api/': {
-        target: 'https://url.devserver/',
-        changeOrigin: true,
-        rewrite: path => path.replace(/^\/api/, ''),
-      },
-    },
   },
 }
 

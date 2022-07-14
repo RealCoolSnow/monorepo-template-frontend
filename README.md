@@ -1,7 +1,7 @@
 # monorepo-template-frontend
 
 ## 项目结构
-    apps/vue3-app 
+    apps/vue3-app
     packages/* 公共模块
 
 ## 全局安装pnpm
