@@ -1,5 +1,5 @@
 {
-  "extends": "../../packages/@common/config/base/tsconfig.json",
+  "extends": "../../packages/@shared/config/base/tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
     "module": "ESNext",

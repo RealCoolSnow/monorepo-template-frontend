@@ -37,7 +37,7 @@
     "vuex": "^4.0.2"
   },
   "devDependencies": {
-    "@common/config": "workspace:*",
+    "@shared/config": "workspace:*",
     "@types/jest": "^28.1.5",
     "@vitejs/plugin-vue": "^2.3.3",
     "@vue/test-utils": "^2.0.2",

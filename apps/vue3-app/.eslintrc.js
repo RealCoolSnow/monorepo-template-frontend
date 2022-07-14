@@ -3,5 +3,5 @@ module.exports = {
   globals: {
     __APP_VERSION__: true,
   },
-  extends: '../../packages/@common/config/base/eslint-vue-preset',
+  extends: '../../packages/@shared/config/base/eslint-vue-preset',
 }
