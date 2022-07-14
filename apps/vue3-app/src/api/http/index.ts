@@ -4,6 +4,8 @@ import store from '../../store'
 
 const baseURL: string = import.meta.env.VITE_BASE_URL?.toString() || ''
 
+// const contentTypeDefault = 'application/x-www-form-urlencoded'
+
 const http = axios.create({
   baseURL,
   timeout: 60000,
@@ -11,7 +13,7 @@ const http = axios.create({
 })
 
 http.interceptors.request.use(
-  (config) => {
+  (config: AxiosRequestConfig) => {
     config.params = {
       ...config.params,
       lang: store.getters.language,
@@ -42,10 +44,28 @@ interface Post {
   >
 }
 
-export const get: Get = async (url, params, config) =>
+interface Put {
+  <T>(url: string, data?: object, config?: AxiosRequestConfig): Promise<
+    ResponseData<T>
+  >
+}
+
+interface Delete {
+  <T>(url: string, params?: object, config?: AxiosRequestConfig): Promise<
+    ResponseData<T>
+  >
+}
+
+export const httpGet: Get = async (url, params, config) =>
   http.get(url, { params, ...config })
 
-export const post: Post = async (url, data, config) =>
+export const httpPost: Post = async (url, data, config) =>
   http.post(url, data, config)
+
+export const httpPut: Put = async (url, data, config) =>
+  http.put(url, data, config)
+
+export const httpDelete: Delete = async (url, params, config) =>
+  http.delete(url, { params, ...config })
 
 export default http
