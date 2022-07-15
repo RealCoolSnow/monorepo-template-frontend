@@ -25,7 +25,7 @@ const app = {
       context: { commit: Commit },
       language: string,
     ) {
-      context.commit(ActionTypes_APP.SET_LANGUAGE, language)
+      context.commit(MutationTypes_APP.SET_LANGUAGE, language)
     },
   },
   getters: {
