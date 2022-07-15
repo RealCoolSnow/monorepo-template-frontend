@@ -4,12 +4,21 @@ import { useStore } from 'vuex'
 // import ActionTypes from '../store/action-types'
 import { MutationTypes } from '../store/types'
 
+const emits = defineEmits<{
+  (e: 'langChanged', locale: string): void
+}>()
 const { locale } = useI18n()
 const store = useStore()
 const onChange = (e: any) => {
-  store.commit(MutationTypes.APP.SET_LANGUAGE, e.target.value)
-  // store.dispatch(ActionTypes.APP.SET_LANGUAGE, e.target.value)
+  const locale = e.target.value
+  store.commit(MutationTypes.APP.SET_LANGUAGE, locale)
+  emits('langChanged', locale)
 }
+const getLocale = () => locale.value
+
+defineExpose({
+  getLocale,
+})
 </script>
 
 <template>

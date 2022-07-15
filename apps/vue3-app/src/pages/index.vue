@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 import { GetterTypes, MutationTypes } from '../store/types'
@@ -8,6 +8,7 @@ import { useHttpTest } from '../test/api-test'
 const store = useStore()
 const router = useRouter()
 const counter = computed(() => store.getters[GetterTypes.APP.COUNTER])
+const localeSwitcher = ref()
 const inc = () => {
   store.commit(MutationTypes.APP.SET_COUNTER, 1)
 }
@@ -17,10 +18,16 @@ const showAbout = () => {
 const mockTest = () => {
   useHttpTest()
 }
+const onLangChanged = (locale: string) => {
+  console.log('onLangChanged', locale)
+}
+onMounted(() => {
+  console.log('localeSwitcher.getLocale()', localeSwitcher.value.getLocale())
+})
 </script>
 
 <template>
-  <LocaleSwitch />
+  <LocaleSwitch ref="localeSwitcher" @lang-changed="onLangChanged" />
   <div>
     <span>{{ $t('home') }}</span>
     <span class="p-1">|</span>
