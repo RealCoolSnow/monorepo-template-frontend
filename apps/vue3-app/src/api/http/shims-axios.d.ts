@@ -9,8 +9,3 @@ declare module 'axios' {
   }
 }
 
-declare global {
-  interface ImportMeta {
-    env: any
-  }
-}

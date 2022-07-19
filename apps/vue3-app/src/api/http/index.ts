@@ -2,7 +2,7 @@ import type { AxiosRequestConfig, ResponseData } from 'axios'
 import axios from 'axios'
 import store from '../../store'
 
-const baseURL: string = import.meta.env.VITE_BASE_URL?.toString() || ''
+const baseURL: string = import.meta.env.BASE_URL?.toString() || ''
 
 // const contentTypeDefault = 'application/x-www-form-urlencoded'
 

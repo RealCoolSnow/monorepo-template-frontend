@@ -2,8 +2,8 @@
 import { computed, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
-import { GetterTypes, MutationTypes } from '../store/types'
 import { useHttpTest } from '../test/api-test'
+import { GetterTypes, MutationTypes } from '@/store/types.d'
 
 const store = useStore()
 const router = useRouter()

@@ -2,7 +2,7 @@
 import { useI18n } from 'vue-i18n'
 import { useStore } from 'vuex'
 // import ActionTypes from '../store/action-types'
-import { MutationTypes } from '../store/types'
+import { MutationTypes } from '@/store/types.d'
 
 const emits = defineEmits<{
   (e: 'langChanged', locale: string): void

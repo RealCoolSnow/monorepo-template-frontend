@@ -1,7 +1,7 @@
 import type { Commit } from 'vuex'
-import { ActionTypes_APP, GetterTypes_APP, MutationTypes_APP } from './types'
+import { ActionTypes_APP, GetterTypes_APP, MutationTypes_APP } from './types.d'
 
-interface AppState {
+export interface AppState {
   counter: number
   language: string
 }
