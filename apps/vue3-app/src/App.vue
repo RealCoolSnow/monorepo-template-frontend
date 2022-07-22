@@ -1,11 +1,10 @@
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+import { provide, ref } from 'vue'
+import { PROVIDE_APP_TIMESTAMP } from './utils/constants'
 
-export default defineComponent({
-  setup() {
-    console.log('app created')
-  },
-})
+console.log('app created')
+const timestamp = ref(new Date().valueOf())
+provide(PROVIDE_APP_TIMESTAMP, timestamp)
 </script>
 
 <template>

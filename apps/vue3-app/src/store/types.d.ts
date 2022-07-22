@@ -5,16 +5,16 @@ import {
 } from './modules/app/types.d'
 
 // mutation
-export class MutationTypes {
-  static APP = MutationTypes_APP
-}
+export const MutationTypes = {
+  APP: MutationTypes_APP
+} as const
 
 // action
-export class ActionTypes {
-  static APP = ActionTypes_APP
-}
+export const ActionTypes = {
+  APP: ActionTypes_APP
+} as const
 
 // getter
-export class GetterTypes {
-  static APP = GetterTypes_APP
-}
+export const GetterTypes = {
+  APP: GetterTypes_APP
+} as const

@@ -1,14 +1,17 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { computed, inject, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 import { useHttpTest } from '../test/api-test'
 import { GetterTypes, MutationTypes } from '@/store/types.d'
+import { PROVIDE_APP_TIMESTAMP } from '@/utils/constants'
 
 const store = useStore()
 const router = useRouter()
 const counter = computed(() => store.getters[GetterTypes.APP.COUNTER])
 const localeSwitcher = ref()
+const timestamp = inject(PROVIDE_APP_TIMESTAMP)
+console.log(PROVIDE_APP_TIMESTAMP, timestamp?.value)
 const inc = () => {
   store.commit(MutationTypes.APP.SET_COUNTER, 1)
 }
