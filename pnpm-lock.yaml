@@ -35,7 +35,7 @@ importers:
       tailwindcss: ^3.1.6
       ts-jest: ^28.0.5
       typescript: ^4.5.4
-      vite: ^2.9.9
+      vite: ^3.0.2
       vite-plugin-components: ^0.13.3
       vite-plugin-mock: ^2.9.6
       vue: ^3.2.25
@@ -52,7 +52,7 @@ importers:
     devDependencies:
       '@shared/config': link:../../packages/@shared/config
       '@types/jest': 28.1.5
-      '@vitejs/plugin-vue': 2.3.3_vite@2.9.14+vue@3.2.37
+      '@vitejs/plugin-vue': 2.3.3_vite@3.0.2+vue@3.2.37
       '@vue/test-utils': 2.0.2_vue@3.2.37
       '@vue/vue3-jest': 28.0.1_3nq5tmujs3nisborbsxnueosam
       '@vuedx/typescript-plugin-vue': 0.7.5
@@ -66,9 +66,9 @@ importers:
       tailwindcss: 3.1.6
       ts-jest: 28.0.5_3tlhrluakukvxn3woootluwvpq
       typescript: 4.7.4
-      vite: 2.9.14
-      vite-plugin-components: 0.13.3_vite@2.9.14
-      vite-plugin-mock: 2.9.6_mockjs@1.1.0+vite@2.9.14
+      vite: 3.0.2
+      vite-plugin-components: 0.13.3_vite@3.0.2
+      vite-plugin-mock: 2.9.6_mockjs@1.1.0+vite@3.0.2
       vue-tsc: 0.34.17_typescript@4.7.4
 
   packages/@shared/common:
@@ -1509,14 +1509,14 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@vitejs/plugin-vue/2.3.3_vite@2.9.14+vue@3.2.37:
+  /@vitejs/plugin-vue/2.3.3_vite@3.0.2+vue@3.2.37:
     resolution: {integrity: sha512-SmQLDyhz+6lGJhPELsBdzXGc+AcaT8stgkbiTFGpXPe8Tl1tJaBw1A6pxDqDuRsVkD8uscrkx3hA7QDOoKYtyw==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       vite: ^2.5.10
       vue: ^3.2.25
     dependencies:
-      vite: 2.9.14
+      vite: 3.0.2
       vue: 3.2.37
     dev: true
 
@@ -6200,7 +6200,7 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-plugin-components/0.13.3_vite@2.9.14:
+  /vite-plugin-components/0.13.3_vite@3.0.2:
     resolution: {integrity: sha512-6vLWPrEqFSW7REYvux/WVwxsytg/DcstVhdgAT806cZi/KGiQgB8dyFnLkrkFawxUQruuGkLWfS99Z/64mMC0w==}
     deprecated: renamed to `unplugin-vue-components`, see https://github.com/antfu/unplugin-vue-components/releases/tag/v0.14.0
     peerDependencies:
@@ -6210,12 +6210,12 @@ packages:
       fast-glob: 3.2.11
       magic-string: 0.25.9
       minimatch: 3.1.2
-      vite: 2.9.14
+      vite: 3.0.2
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite-plugin-mock/2.9.6_mockjs@1.1.0+vite@2.9.14:
+  /vite-plugin-mock/2.9.6_mockjs@1.1.0+vite@3.0.2:
     resolution: {integrity: sha512-/Rm59oPppe/ncbkSrUuAxIQihlI2YcBmnbR4ST1RA2VzM1C0tEQc1KlbQvnUGhXECAGTaQN2JyasiwXP6EtKgg==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -6232,26 +6232,29 @@ packages:
       fast-glob: 3.2.11
       mockjs: 1.1.0
       path-to-regexp: 6.2.1
-      vite: 2.9.14
+      vite: 3.0.2
     transitivePeerDependencies:
       - rollup
       - supports-color
     dev: true
 
-  /vite/2.9.14:
-    resolution: {integrity: sha512-P/UCjSpSMcE54r4mPak55hWAZPlyfS369svib/gpmz8/01L822lMPOJ/RYW6tLCe1RPvMvOsJ17erf55bKp4Hw==}
-    engines: {node: '>=12.2.0'}
+  /vite/3.0.2:
+    resolution: {integrity: sha512-TAqydxW/w0U5AoL5AsD9DApTvGb2iNbGs3sN4u2VdT1GFkQVUfgUldt+t08TZgi23uIauh1TUOQJALduo9GXqw==}
+    engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
       less: '*'
       sass: '*'
       stylus: '*'
+      terser: ^5.4.0
     peerDependenciesMeta:
       less:
         optional: true
       sass:
         optional: true
       stylus:
+        optional: true
+      terser:
         optional: true
     dependencies:
       esbuild: 0.14.49

@@ -50,6 +50,7 @@ const config: UserConfig = {
     }),
   ],
   server: {
+    port: 8888,
     proxy: {
       '/api/': {
         target: 'https://url.devserver/',
