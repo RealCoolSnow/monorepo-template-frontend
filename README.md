@@ -1,20 +1,26 @@
 # monorepo-template-frontend
 
-## 项目结构
+## Project struct
     apps/vue3-app 
-    packages/* 公共模块
+    apps/react-app
+    packages/*  // common packages
 
-## 全局安装pnpm
+## Install `pnpm` first
 `npm i pnpm -g`
 
-## 安装依赖
+## Install dependencies
 `pnpm i`
 
-## 运行
+## Run 
 `pnpm dev --filter "vue3-app"` 
 
-## 构建
+## Build
 `pnpm build --filter "vue3-app"`
 
-## 服务端构建
-`build-vue3-app.sh #后面跟分支名称，不加分支默认为master`
+# Author
+
+CoolSnow
+
+Email: coolsnow2020@gmail.com
+
+Twitter: https://twitter.com/CoolSnow0927
