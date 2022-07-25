@@ -2,9 +2,9 @@
   "name": "monorepo-template-frontend",
   "version": "1.0.0",
   "private": true,
+  "description": "monorepo-template-frontend project",
   "license": "MIT",
   "author": "CoolSnow(coolsnow2020@gmail.com)",
-  "description": "monorepo-template-frontend project",
   "scripts": {
     "build": "turbo run build",
     "clean": "rimraf **/dist **/.turbo **/node_modules",
